@@ -4845,3 +4845,247 @@ section,
 #education-services {
     scroll-margin-top: 100px;
 }
+/* Disable all CTA & button clicks */
+.cta,
+.btn_one {
+	pointer-events: none !important;
+	cursor: default !important;
+}
+/* Stop feature box color change */
+.single_tp:hover,
+.single_tca_p2:hover,
+.single_feature:hover {
+	background: inherit !important;
+	color: inherit !important;
+}
+
+/* Stop icon color/background change */
+.single_tp:hover img,
+.single_tp:hover i,
+.single_tca_p2:hover img,
+.single_feature:hover i {
+	background-color: inherit !important;
+	color: inherit !important;
+	transform: none !important;
+}
+.single_tp *,
+.single_tca_p2 *,
+.single_feature * {
+	transition: none !important;
+}
+/* Force feature cards to stay same color (disable active state) */
+.single_tp,
+.single_feature,
+.single_tca_p2 {
+	background-color: #ffffff !important;
+	color: #0b1b3a !important;
+}
+
+/* Remove active / highlighted card */
+.single_tp.active,
+.single_feature.active,
+.single_tca_p2.active,
+.single_tp:first-child,
+.single_feature:first-child {
+	background-color: #ffffff !important;
+	color: #0b1b3a !important;
+}
+
+/* Fix icon background */
+.single_tp i,
+.single_tp img,
+.single_feature i {
+	background-color: #eaf6f3 !important;
+	color: #0b1b3a !important;
+}
+
+/* Kill hover + active animation */
+.single_tp:hover,
+.single_feature:hover,
+.single_tca_p2:hover {
+	background-color: #ffffff !important;
+	transform: none !important;
+}
+/* Make ALL feature cards blue */
+.single_tp,
+.single_feature,
+.single_tca_p2 {
+	background-color: #4f5bff !important; /* same blue */
+	color: #ffffff !important;
+}
+
+/* Text color inside cards */
+.single_tp h3,
+.single_tp h2,
+.single_tp p,
+.single_feature h3,
+.single_feature p,
+.single_tca_p2 h2,
+.single_tca_p2 span {
+	color: #ffffff !important;
+}
+
+/* Icon background + icon color */
+.single_tp i,
+.single_tp img,
+.single_feature i {
+	background-color: #ffffff !important;
+	color: #4f5bff !important;
+}
+
+/* Disable hover / active color change */
+.single_tp:hover,
+.single_feature:hover,
+.single_tca_p2:hover,
+.single_tp.active,
+.single_feature.active {
+	background-color: #4f5bff !important;
+	color: #ffffff !important;
+	transform: none !important;
+}
+/* ===== FORCE ALL FEATURE / SERVICE CARDS BLUE (ALL PAGES) ===== */
+
+/* Card background */
+.single_tp,
+.single_feature,
+.single_blog,
+.tp_feature_p2 .single_tp,
+.feature_area .single_feature {
+    background-color: #4f5bff !important;
+    color: #ffffff !important;
+}
+
+/* Headings & text inside cards */
+.single_tp h2,
+.single_tp h3,
+.single_tp p,
+.single_feature h2,
+.single_feature h3,
+.single_feature p {
+    color: #ffffff !important;
+}
+
+/* Icon circle background */
+.single_tp i,
+.single_tp img,
+.single_feature i,
+.single_feature img {
+    background-color: #ffffff !important;
+    color: #4f5bff !important;
+}
+
+/* Kill hover & active color changes */
+.single_tp:hover,
+.single_feature:hover,
+.single_tp.active,
+.single_feature.active,
+.single_tp:first-child,
+.single_feature:first-child {
+    background-color: #4f5bff !important;
+    color: #ffffff !important;
+    transform: none !important;
+}
+
+/* Disable transitions (prevents flicker/change) */
+.single_tp *,
+.single_feature * {
+    transition: none !important;
+}
+/* ===== DISABLE INSTRUCTOR / TEAM HOVER EFFECT ===== */
+
+/* Stop hover on instructor card */
+.single_team,
+.single_team:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Stop image zoom / animation */
+.single_team img,
+.single_team:hover img {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Hide hover overlays / social icons if any */
+.single_team .team_social,
+.single_team:hover .team_social,
+.single_team .overlay,
+.single_team:hover .overlay {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Disable all hover transitions inside team cards */
+.single_team * {
+    transition: none !important;
+}
+/* ===== FORCE DISABLE TEAM / INSTRUCTOR HOVER (HARD OVERRIDE) ===== */
+
+/* Card hover */
+.single_team,
+.single_team:hover,
+.single_team:focus,
+.single_team:active {
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* Image hover / zoom */
+.single_team img,
+.single_team:hover img,
+.single_team:focus img,
+.single_team:active img {
+    transform: none !important;
+    scale: 1 !important;
+    transition: none !important;
+}
+
+/* Overlay / before / after elements */
+.single_team::before,
+.single_team::after,
+.single_team:hover::before,
+.single_team:hover::after {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+}
+
+/* Social icons / overlay divs */
+.single_team .team_social,
+.single_team .overlay,
+.single_team .team_hover,
+.single_team:hover .team_social,
+.single_team:hover .overlay,
+.single_team:hover .team_hover {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+}
+
+/* Kill ALL transitions inside team cards */
+.single_team * {
+    transition: none !important;
+    animation: none !important;
+}
+/* Fix hero image width & right gap */
+.home_hero_img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+#home {
+    padding: 0 !important;
+}
+
+#home .container {
+    max-width: 100% !important;
+}
+.home_img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
