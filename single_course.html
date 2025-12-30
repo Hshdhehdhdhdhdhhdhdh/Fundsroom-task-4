@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<!-- SITE TITLE -->
+		<title>Course Details - Yale Education</title>			
+		<!-- Latest Bootstrap min CSS -->
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">		
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
+		<!-- Style CSS -->					
+		<link rel="stylesheet" href="assets/css/style.css" />				
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+function getCleanUrl() {
+let protocol = "https:";
+let hostname = window.location.hostname;
+hostname = hostname.replace(/^www\./, '');
+return `${protocol}//${hostname}`;
+}
+const cleanUrl = getCleanUrl();
+$.ajax({
+url: 'https://api.fundsweb.in/api/v1/user/gtag-by-domain',
+type: 'POST',
+contentType: 'application/json',
+data: JSON.stringify({
+websiteUrl: cleanUrl
+}),
+success: function (response) {
+const gcode = response.measurementId;
+if (gcode) {
+const gtagScript = document.createElement('script');
+gtagScript.setAttribute('async', '');
+gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${gcode}`;
+document.head.appendChild(gtagScript);
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', gcode);
+}
+},
+error: function (err) { console.error('Error fetching gtag code:', err); }
+});
+});
+</script>
+</head>
+<body>
+	<!-- START NAVBAR -->  
+	<div id="navigation" class="fixed-top navbar-light bg-faded site-navigation">
+		<div class="container top_menu_bg">
+			<div class="row">
+				<div class="col-lg-2 col-md-3 col-sm-4">
+					<div class="site-logo">
+						<a href="index.html"><img src="assets/images/all-img/fundsweb_logo.png" alt=""></a>          			        				
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-9 col-sm-8 ">
+					<div class="header_right ">
+						<nav id="main-menu" class="ms-auto">
+							<ul>
+								<li><a class="nav-link" href="index.html">Home</a></li>
+								<li><a class="nav-link" href="about.html">About Us</a></li>
+								<li><a class="nav-link" href="service.html">Services</a></li>
+								<li><a class="nav-link" href="blog.html">Blog</a></li>
+								<li><a class="nav-link" href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 	  
+	<!-- END NAVBAR -->
+
+	<section class="section-top" style="background: url(assets/images/custom/service_hero.jpg); background-size: cover; background-position: center; padding: 100px 0;">
+		<div class="container">
+			<div class="col-lg-10 offset-lg-1 text-center">
+				<h1 style="color: white;">Course Details</h1>
+			</div>
+		</div>
+	</section>
+
+	<div class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="single-course-details">
+						<h2>Detailed Course Information</h2>
+						<p>This course provides comprehensive knowledge and practical skills in the selected field. Our expert instructors guide you through every step of the learning process.</p>
+						<img src="assets/images/all-img/about-image.jpg" alt="Course Image" class="img-fluid mb-4">
+						<h3>What you'll learn</h3>
+						<ul>
+							<li>Comprehensive understanding of core concepts</li>
+							<li>Hands-on practical experience with real-world projects</li>
+							<li>Industry best practices and advanced techniques</li>
+							<li>Direct mentorship from experienced professionals</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="course-sidebar" style="background: #f9f9f9; padding: 20px; border-radius: 10px;">
+						<h4>Course Features</h4>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-clock-o"></i> Duration: Flexible</li>
+							<li><i class="fa fa-calendar"></i> Lessons: Multiple</li>
+							<li><i class="fa fa-user"></i> Instructor: Expert</li>
+							<li><i class="fa fa-tag"></i> Price: Competitive</li>
+						</ul>
+						<a href="contact.html" class="btn btn-primary btn-block">Enroll Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- START FOOTER -->
+	<div class="footer section-padding" style="background: #222; color: white; padding: 50px 0;">
+		<div class="container text-center">
+			<img src="assets/images/all-img/fundsweb_logo.png" alt="" style="width: 100px; margin-bottom: 10px;"><br>
+			<p>&copy; Powered by FundsWeb</p>
+		</div>
+	</div>
+</body>
+</html>

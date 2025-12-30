@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Yale - Education HTML Template">
+    <meta name="keywords" content="theme_ocean, college, course, e-learning, education, high school, kids, learning, online, online courses, school, student, teacher, tutor, university">
+    <meta name="author" content="theme_ocean">
+    <!-- SITE TITLE -->
+    <title>Login / Register - Yale Education</title>
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/themify-icons.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+function getCleanUrl() {
+let protocol = "https:";
+let hostname = window.location.hostname;
+hostname = hostname.replace(/^www\./, '');
+return `${protocol}//${hostname}`;
+}
+const cleanUrl = getCleanUrl();
+console.log('Clean URL:', cleanUrl);
+$.ajax({
+url: 'https://api.fundsweb.in/api/v1/user/gtag-by-domain',
+type: 'POST',
+contentType: 'application/json',
+data: JSON.stringify({
+websiteUrl: cleanUrl
+}),
+success: function (response) {
+console.log("gtag for client:", response);
+const gcode = response.measurementId;
+if (response.seoKeywords) {
+$('meta[name="description"]').attr('content',
+response.seoKeywords);
+console.log("Meta description updated with:",
+response.seoKeywords);
+}
+if (gcode) {
+const gtagScript =
+document.createElement('script');
+gtagScript.setAttribute('async', '');
+gtagScript.src =
+`https://www.googletagmanager.com/gtag/js?id=${gcode}`;
+document.head.appendChild(gtagScript);
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+window.gtag = gtag;
+gtag('js', new Date());
+gtag('config', gcode);
+}
+},
+error: function (err) {
+console.error('Error fetching gtag code:', err);
+}
+});
+});
+</script>
+</head>
+<body>
+    <!-- START PRELOADER -->
+    <div class="preloaders">
+        <span class="loader"></span>
+    </div>
+    <!-- END PRELOADER -->
+
+    <!-- START LOGO WITH CONTACT -->
+    <section class="logo-contact" style="padding: 15px 0; background: #282a74;">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="single-top-contact" style="display: flex; align-items: center; color: #fff;">
+<i class="fa fa-phone" style="font-size: 20px; margin-right: 10px;"></i>
+<h4 style="margin: 0; font-size: 14px;">+485 7548 854826</h4>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="single-top-contact" style="display: flex; align-items: center; color: #fff;">
+<i class="fa fa-envelope" style="font-size: 20px; margin-right: 10px;"></i>
+<h4 style="margin: 0; font-size: 14px;"><a href="mailto:example@gmail.com" style="color: #fff;">example@mail.com</a></h4>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="single-top-contact" style="display: flex; align-items: center; color: #fff;">
+<i class="fa fa-clock-o" style="font-size: 20px; margin-right: 10px;"></i>
+<h4 style="margin: 0; font-size: 14px;">Mon to sat Open: 9am - 6pm</h4>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="top_social_profile" style="text-align: right;">
+<ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: flex-end;">
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+    <!-- END LOGO WITH CONTACT -->
+
+    <!-- START NAVBAR -->
+    <div id="navigation" class="fixed-top navbar-light bg-faded site-navigation">
+        <div class="container top_menu_bg">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="site-logo">
+                        <a href="index.html"><img src="assets/images/all-img/fundsweb_logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9 col-sm-8 ">
+                    <div class="header_right ">
+                        <nav id="main-menu" class="ms-auto">
+                            <ul>
+                                <li><a class="nav-link" href="index.html">Home</a></li>
+                                <li><a class="nav-link" href="about.html">About Us</a></li>
+                                <li><a class="nav-link" href="service.html">Services</a></li>
+                                <li><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div id="mobile_menu"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-8 m-none">
+                    <div class="home_lc">
+                    </div>
+                    <div class="call_to_action">
+                        <a class="btn_two" href="register.html#login">Login</a> <a class="btn_two" href="register.html#register" style="margin-left:10px;">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+
+    <!-- START LOGIN AND REGISTER -->
+    <section class="login_register section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12" id="login">
+                    <div class="login" style="padding: 30px; border: 1px solid #eee; border-radius: 10px;">
+                        <h2 class="login_register_title">Login</h2>
+                        <form id="loginForm">
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn_one">Login</button>
+                            <p style="margin-top: 15px;">Don't have an account? <a href="#register" onclick="showRegister()">Register Now</a></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12" id="register">
+                    <div class="register" style="padding: 30px; border: 1px solid #eee; border-radius: 10px;">
+                        <h2 class="login_register_title">Register</h2>
+                        <form id="registerForm">
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label>Password</label>
+                                <input type="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn_one">Register</button>
+                            <p style="margin-top: 15px;">Already have an account? <a href="#login" onclick="showLogin()">Login Now</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END LOGIN AND REGISTER -->
+
+    <!-- START FOOTER -->
+    <footer class="footer section-padding" style="background: #f8f9fa; margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2025 Yale Education. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- Latest jQuery -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!-- Latest Compiled and Minified Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- scripts js -->
+    <script src="assets/js/scripts.js"></script>
+    
+    <script>
+        function showLogin() {
+            document.getElementById('login').style.display = 'block';
+            document.getElementById('register').style.display = 'block'; // Keep both visible as per layout
+            window.scrollTo({
+                top: document.getElementById('login').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+        
+        function showRegister() {
+            document.getElementById('register').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('register').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        $(document).ready(function() {
+            // Handle action parameter on load
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+            if(action === 'login') {
+                showLogin();
+            } else if(action === 'register') {
+                showRegister();
+            }
+
+            // Simulate form submission
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+                alert('Login successful! Redirecting to home...');
+                window.location.href = 'index.html';
+            });
+
+            $('#registerForm').on('submit', function(e) {
+                e.preventDefault();
+                alert('Registration successful! You can now login.');
+                showLogin();
+            });
+        });
+    </script>
+</body>
+</html>
