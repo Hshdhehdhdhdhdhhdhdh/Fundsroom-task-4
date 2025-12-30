@@ -5173,3 +5173,21 @@ section,
   align-items: center;
   justify-content: flex-end;
 }
+/* FIX blog meta text color consistency */
+.single_blog .content_box span,
+.single_blog .content_box span a {
+  color: #0b1c3f !important;   /* same color as others */
+  opacity: 1 !important;
+  font-weight: 500;
+}
+
+/* Remove visited / active color change */
+.single_blog .content_box span a:visited,
+.single_blog .content_box span a:hover,
+.single_blog .content_box span a:active,
+.single_blog .content_box span a:focus {
+  color: #0b1c3f !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
