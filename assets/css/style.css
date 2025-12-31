@@ -4848,3 +4848,313 @@ section,
 .single_footer h4 {
 	margin-bottom: 25px;
 }
+/* =====================================
+   FIX: "Best Features" color never blue
+   ===================================== */
+
+/* Heading link – lock color permanently */
+.section-title h2 a,
+.section-title h2 a:hover,
+.section-title h2 a:focus,
+.section-title h2 a:active,
+.section-title h2 a:visited {
+  color: #4f5bfd !important;   /* use your exact blue */
+  text-decoration: underline;
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* =====================================
+   FIX: Feature box color must NOT change
+   ===================================== */
+
+/* Target feature cards */
+.single_feature,
+.single_feature:hover,
+.single_feature:active,
+.single_feature:focus {
+  background: #ffffff !important;
+  color: inherit !important;
+}
+
+/* If the blue one uses a modifier class */
+.single_feature.active,
+.single_feature.active:hover,
+.single_feature.active:active {
+  background: #ffffff !important;
+}
+
+/* Prevent text color change */
+.single_feature h3,
+.single_feature p {
+  color: #0b1f4b !important;
+}
+
+/* Disable click focus highlight */
+.single_feature:focus,
+.single_feature *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+/* ================================
+   KEEP FEATURE CARDS ALWAYS WHITE
+   ================================ */
+
+.single_feature,
+.single_feature:hover,
+.single_feature:active,
+.single_feature:focus,
+.single_feature:focus-within,
+.single_feature.active {
+  background-color: #ffffff !important;
+}
+
+/* Text color stays normal */
+.single_feature *,
+.single_feature:hover *,
+.single_feature:active *,
+.single_feature:focus *,
+.single_feature.active * {
+  color: #0b1f4b !important;
+}
+
+/* Remove hover / click animation */
+.single_feature,
+.single_feature * {
+  transition: none !important;
+}
+
+/* Remove focus & active styles */
+.single_feature:focus,
+.single_feature *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.single_feature a {
+  pointer-events: none;
+}
+/* ==========================================
+   FORCE FEATURE CARDS TO STAY WHITE ALWAYS
+   ========================================== */
+
+.single_feature,
+.single_feature:hover,
+.single_feature:active,
+.single_feature:focus,
+.single_feature.active,
+.single_feature:focus-within {
+  background: #ffffff !important;
+}
+
+/* Text color fixed */
+.single_feature *,
+.single_feature.active * {
+  color: #0b1f4b !important;
+}
+
+/* Remove all animations & effects */
+.single_feature,
+.single_feature * {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+/* Disable click/hover visuals */
+.single_feature {
+  pointer-events: none;
+}
+/* =================================================
+   FORCE "WHY CHOOSE YALE" FEATURE CARDS TO STAY WHITE
+   ================================================= */
+
+/* Target ONLY the feature cards section */
+.why_choose_yale .single_feature,
+.why_choose_yale .single_feature:hover,
+.why_choose_yale .single_feature:active,
+.why_choose_yale .single_feature:focus,
+.why_choose_yale .single_feature:focus-within,
+.why_choose_yale .single_feature.active,
+.why_choose_yale .single_feature.active:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Keep text color fixed */
+.why_choose_yale .single_feature *,
+.why_choose_yale .single_feature:hover *,
+.why_choose_yale .single_feature.active * {
+  color: #0b1f4b !important;
+}
+
+/* Kill hover animation / color flash */
+.why_choose_yale .single_feature {
+  transition: none !important;
+  box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+}
+/* Force Explore circle to BLUE */
+.cta::before {
+  background: #4f5bff !important; /* blue */
+}
+
+/* Keep text & arrow white */
+.cta span,
+.cta svg {
+  color: #ffffff;
+}
+
+.cta svg path,
+.cta svg polyline {
+  stroke: #ffffff;
+}
+/* ===== Disable Blog Hover Effects ===== */
+.single_blog,
+.single_blog:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.single_blog img,
+.single_blog:hover img {
+  transform: none !important;
+}
+
+.single_blog .content_box,
+.single_blog:hover .content_box {
+  background: #ffffff !important;
+}
+
+.single_blog h2 a,
+.single_blog h2 a:hover,
+.single_blog span a,
+.single_blog span a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Disable READ MORE hover */
+.single_blog .cta,
+.single_blog .cta:hover {
+  background: inherit !important;
+  color: inherit !important;
+  transform: none !important;
+}
+
+/* Disable pointer cursor */
+.single_blog a {
+  cursor: default !important;
+}
+/* ===============================
+   REMOVE READ MORE HOVER EFFECT
+   =============================== */
+
+/* Stop ALL hover effects */
+.single_blog .cta,
+.single_blog .cta:hover {
+  background: #4f5bff !important;   /* keep blue */
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Stop pseudo-element animation (circle expand / slide) */
+.single_blog .cta::before,
+.single_blog .cta::after,
+.single_blog .cta:hover::before,
+.single_blog .cta:hover::after {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Stop SVG arrow movement */
+.single_blog .cta svg,
+.single_blog .cta:hover svg {
+  transform: none !important;
+}
+
+/* Disable pointer cursor */
+.single_blog .cta {
+  cursor: default !important;
+}
+/* =====================================
+   DISABLE EXPLORE / READ MORE ANIMATIONS
+   (HOME + BLOG)
+   ===================================== */
+
+.cta,
+.cta:hover {
+  background: #4f5bff !important; /* blue stays */
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Kill sliding / expanding circles */
+.cta::before,
+.cta::after,
+.cta:hover::before,
+.cta:hover::after {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Stop arrow animation */
+.cta svg,
+.cta:hover svg {
+  transform: none !important;
+}
+
+/* Normal cursor (not clickable feel) */
+.cta {
+  cursor: default !important;
+}
+/* Disable hover & active color change for feature cards */
+.single_feature_one,
+.single_feature_one:hover,
+.single_feature_one.active {
+    background: #ffffff !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
+
+/* Disable text color change */
+.single_feature_one h2,
+.single_feature_one h2 a,
+.single_feature_one p {
+    color: #0b1c39 !important;
+}
+
+/* Disable icon background/color change */
+.single_feature_one .sf_top span {
+    background: inherit !important;
+    color: inherit !important;
+}
+/* ===== Disable ALL hover effects on Team cards & images ===== */
+
+/* Card hover */
+.our-team,
+.our-team:hover {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Image hover effects */
+.our-team .team_img img,
+.our-team:hover .team_img img {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Disable overlay if any */
+.our-team .team_img::before,
+.our-team:hover .team_img::before,
+.our-team .team_img::after,
+.our-team:hover .team_img::after {
+    display: none !important;
+}
+
+/* Text color stay same */
+.our-team .title,
+.our-team .post,
+.our-team:hover .title,
+.our-team:hover .post {
+    color: #0b1c39 !important;
+}
