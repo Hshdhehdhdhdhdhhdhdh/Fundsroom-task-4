@@ -190,7 +190,7 @@ console.error('Error fetching gtag code:', err);
 					<div class="single_tp">
 						<h3>Experienced Teachers</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
-						<a href="#" class="cta"><span>Explore</span>
+						<a href="#" class="cta disable-explore-link"> <span>Explore</span>
 						  <svg width="13px" height="10px" viewBox="0 0 13 10">
 							<path d="M1,5 L11,5"></path>
 							<polyline points="8 1 12 5 8 9"></polyline>
@@ -229,7 +229,7 @@ console.error('Error fetching gtag code:', err);
 						<h2>Learn new skills to go <u><span>ahead for your </span></u> career.</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et simply. From blogs to emails to ad copies, auto-generate catchy, original, and high-converting copies in popular tones languages.From blogs to emails to ad copies, auto-generate catchy, original and high-converting copies.</p>
 						<p><strong>Auto-generate catchy original and high-converting copies in popular tones languages. From blogs to emails to ad copies auto-generate catchy</strong></p>
-						<a class="btn_one" href="about.html">Read More us</a>
+						<a class="btn_one" href="javascript:void(0)">Read More us</a>
 					</div>						
 				</div><!--- END COL -->								  
 			</div><!--- END ROW -->
@@ -621,5 +621,38 @@ console.error('Error fetching gtag code:', err);
 	<!-- WOW - Reveal Animations When You Scroll -->
 		<script src="assets/js/wow.min.js"></script>				
 	<!-- scripts js -->	
-		<script src="assets/js/scripts.js"></script>				
+		<script src="assets/js/scripts.js"></script>
+		<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".single_feature").forEach(function(card) {
+    card.classList.remove("active");
+
+    // Block future activation
+    card.addEventListener("mouseenter", e => e.stopPropagation());
+    card.addEventListener("click", e => e.preventDefault());
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".why_choose_yale .single_feature").forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.remove("active");
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".disable-explore-link").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+});
+</script>
+
+
+				
 </body>
